@@ -39,7 +39,7 @@ public class MovimientoJugador : MonoBehaviour
         else Grounded = false;
 
         // Salto
-        if (Input.GetKeyDown(KeyCode.W) && Grounded)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && Grounded)
         {
             Jump();
         }
