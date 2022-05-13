@@ -10,20 +10,33 @@ public class GruntScript : MonoBehaviour
     private int Health = 3;
     private float LastShoot;
 
+    private float distanceToPlayer;
+    public int directionLooking = 1; //-1 = izquierda || 1 = derecha
+
+    public int directionToTest;
+
     void Update()
     {
         if (John == null) return;
 
-        Vector3 direction = John.position - transform.position;
-        if (direction.x >= 0.0f) transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-        else transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
+        distanceToPlayer = Mathf.Abs(John.position.x - transform.position.x);
 
-        float distance = Mathf.Abs(John.position.x - transform.position.x);
+        if (John.position.x < transform.position.x)
+            directionToTest = -1;
+        else
+            directionToTest = 1;
 
-        if (distance < 1.0f && Time.time > LastShoot + 1.0f)
+        if (distanceToPlayer > 1.0f || directionLooking != directionToTest)
         {
-            Shoot();
-            LastShoot = Time.time;
+            transform.position = new Vector2(transform.position.x + 0.5f * directionLooking * Time.deltaTime, transform.position.y);
+        }
+        else
+        {
+            if (Time.time > LastShoot + 0.25f && directionLooking == directionToTest)
+            {
+                Shoot();
+                LastShoot = Time.time;
+            }
         }
     }
 
@@ -38,5 +51,21 @@ public class GruntScript : MonoBehaviour
     {
         Health -= 1;
         if (Health == 0) Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+
+        if (directionLooking == 1)
+        {
+            directionLooking = -1;
+            transform.localScale = new Vector3(directionLooking, 1.0f, 1.0f);
+        }
+        else
+        {
+            directionLooking = 1;
+            transform.localScale = new Vector3(directionLooking, 1.0f, 1.0f);
+        }
+            
     }
 }
