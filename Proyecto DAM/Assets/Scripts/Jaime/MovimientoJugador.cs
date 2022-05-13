@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MovimientoJugador : MonoBehaviour
 {
+    public Transform spawnPoint;
+
     public float Speed;
     public float JumpForce;
     public GameObject BulletPrefab;
@@ -39,7 +41,7 @@ public class MovimientoJugador : MonoBehaviour
         else Grounded = false;
 
         // Salto
-        if (Input.GetKeyDown(KeyCode.W) && Grounded)
+        if (Input.GetKeyDown(KeyCode.W) && Grounded || (Input.GetKeyDown(KeyCode.UpArrow) && Grounded))
         {
             Jump();
         }
@@ -75,7 +77,10 @@ public class MovimientoJugador : MonoBehaviour
     public void Hit()
     {
         Health -= 1;
-        if (Health == 0) Destroy(gameObject);
+        if (Health == 0)
+        {
+            this.transform.position = (new Vector2(spawnPoint.position.x, spawnPoint.position.y));
+        }
     }
 }
 

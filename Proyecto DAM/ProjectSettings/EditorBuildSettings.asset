@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/Carlos/Menus/Menu\u0301Principal.unity"
     guid: b3fe2dedaa6a24d34b6f36e9412e4089
-  - enabled: 1
-    path: Assets/Scenes/Pruebas.unity
-    guid: 9340479e6f2782f44ba3ae6fc8571bce
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
