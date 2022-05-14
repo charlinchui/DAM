@@ -1,6 +1,7 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovimientoJugador : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class MovimientoJugador : MonoBehaviour
     private bool Grounded;
     private float LastShoot;
     private int Health = 5;
+
+    public List<GameObject> hearts;
 
     private void Start()
     {
@@ -77,9 +80,18 @@ public class MovimientoJugador : MonoBehaviour
     public void Hit()
     {
         Health -= 1;
+       /* if (Health == 0)
+        {
+            this.transform.position = (new Vector2(spawnPoint.position.x, spawnPoint.position.y));*/
+
+        GameObject.Destroy(hearts[hearts.Count - 1]);
+        hearts.RemoveAt(hearts.Count - 1);
+
         if (Health == 0)
         {
-            this.transform.position = (new Vector2(spawnPoint.position.x, spawnPoint.position.y));
+            Destroy(gameObject);
+           // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+           this.transform.position = (new Vector2(spawnPoint.position.x, spawnPoint.position.y));
         }
     }
 }
