@@ -50,10 +50,7 @@ public class GruntScript : MonoBehaviour
     public void Hit()
     {
         Health -= 1;
-        if (Health == 0)
-        {
-            Destroy(this.gameObject);
-        }
+        if (Health == 0) Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D col)

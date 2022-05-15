@@ -1,12 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MovimientoJugador : MonoBehaviour
 {
-    public Transform spawnPoint;
-
     public float Speed;
     public float JumpForce;
     public GameObject BulletPrefab;
@@ -44,7 +42,7 @@ public class MovimientoJugador : MonoBehaviour
         else Grounded = false;
 
         // Salto
-        if (Input.GetKeyDown(KeyCode.W) && Grounded || (Input.GetKeyDown(KeyCode.UpArrow) && Grounded))
+        if (Input.GetKeyDown(KeyCode.W) && Grounded)
         {
             Jump();
         }
@@ -80,9 +78,6 @@ public class MovimientoJugador : MonoBehaviour
     public void Hit()
     {
         Health -= 1;
-       /* if (Health == 0)
-        {
-            this.transform.position = (new Vector2(spawnPoint.position.x, spawnPoint.position.y));*/
 
         GameObject.Destroy(hearts[hearts.Count - 1]);
         hearts.RemoveAt(hearts.Count - 1);
@@ -90,8 +85,7 @@ public class MovimientoJugador : MonoBehaviour
         if (Health == 0)
         {
             Destroy(gameObject);
-           // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-           this.transform.position = (new Vector2(spawnPoint.position.x, spawnPoint.position.y));
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
