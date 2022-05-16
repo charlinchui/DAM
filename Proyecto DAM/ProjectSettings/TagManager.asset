@@ -7,6 +7,10 @@ TagManager:
   - Suelo
   - Enemy
   - Limits
+  - Bullet
+  - CheckPoint1
+  - CheckPoint2
+  - CheckPoints
   layers:
   - Default
   - TransparentFX

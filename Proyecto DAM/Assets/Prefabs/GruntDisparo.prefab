@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9176424027358458986}
   - component: {fileID: 9176424027358458999}
   - component: {fileID: 9176424027358458998}
+  - component: {fileID: 1240806121733049991}
   m_Layer: 0
   m_Name: GruntDisparo
   m_TagString: Enemy
@@ -159,3 +160,16 @@ CapsuleCollider2D:
   m_Offset: {x: -0.02764523, y: -0.002513215}
   m_Size: {x: 0.08779645, y: 0.16821888}
   m_Direction: 0
+--- !u!114 &1240806121733049991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176424027358458989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45e0d945b6b5414c8d778f9b8e3d390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPoint: {fileID: 0}

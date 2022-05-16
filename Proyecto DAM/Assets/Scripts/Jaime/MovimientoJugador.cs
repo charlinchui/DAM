@@ -9,6 +9,8 @@ public class MovimientoJugador : MonoBehaviour
 
     public PhotonView view;
 
+    public GameObject checkPoint;
+
     public float Speed;
     public float JumpForce;
     public GameObject BulletPrefab;
@@ -27,6 +29,7 @@ public class MovimientoJugador : MonoBehaviour
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
         view = GetComponent<PhotonView>();
+        checkPoint = GameObject.FindGameObjectWithTag("CheckPoints");
     }
 
     private void Update()
@@ -93,8 +96,9 @@ public class MovimientoJugador : MonoBehaviour
 
         if (Health == 0)
         {
-            Destroy(gameObject);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //Destroy(gameObject);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            this.transform.position = (new Vector2(checkPoint.transform.position.x, checkPoint.transform.position.y));
         }
     }
 }
