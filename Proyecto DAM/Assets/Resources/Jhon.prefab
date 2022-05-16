@@ -138,6 +138,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   view: {fileID: 0}
+  respawnPoint: {fileID: 0}
+  sprite: {fileID: 0}
+  respawnDelay: 0
   Speed: 1
   JumpForce: 150
   BulletPrefab: {fileID: 5917017539209067322, guid: b86a806b6b839fa4a9b5798c65a44183,
