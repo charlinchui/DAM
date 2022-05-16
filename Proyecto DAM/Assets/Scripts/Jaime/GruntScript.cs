@@ -5,7 +5,7 @@ using UnityEngine;
 public class GruntScript : MonoBehaviour
 {
     public Transform John;
-    public GameObject BulletPrefab;
+    public GameObject EnemyBulletPrefab;
 
     private int Health = 3;
     private float LastShoot;
@@ -32,7 +32,7 @@ public class GruntScript : MonoBehaviour
         }
         else
         {
-            if (Time.time > LastShoot + 0.25f && directionLooking == directionToTest)
+            if (Time.time > LastShoot + 01.0 && directionLooking == directionToTest)
             {
                 Shoot();
                 LastShoot = Time.time;
@@ -43,8 +43,8 @@ public class GruntScript : MonoBehaviour
     private void Shoot()
     {
         Vector3 direction = new Vector3(transform.localScale.x, 0.0f, 0.0f);
-        GameObject bullet = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
-        bullet.GetComponent<BulletScript>().SetDirection(direction);
+        GameObject bullet = Instantiate(EnemyBulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
+        bullet.GetComponent<EnemyBulletScript>().SetDirection(direction);
     }
 
     public void Hit()
