@@ -9,6 +9,12 @@ public class MovimientoJugador : MonoBehaviour
 
     public PhotonView view;
 
+    public Transform respawnPoint;
+
+    //public Color color = new Color(255,255,255);
+    public SpriteRenderer sprite;
+    public int respawnDelay;
+
     public float Speed;
     public float JumpForce;
     public GameObject BulletPrefab;
@@ -19,6 +25,8 @@ public class MovimientoJugador : MonoBehaviour
     private bool Grounded;
     private float LastShoot;
     private int Health = 5;
+    int index = 1;
+    GameObject[] cora = new GameObject [5];
 
     public List<GameObject> hearts;
 
@@ -27,10 +35,16 @@ public class MovimientoJugador : MonoBehaviour
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
         view = GetComponent<PhotonView>();
+        sprite = GetComponent<SpriteRenderer>();
+        cora = GameObject.FindGameObjectsWithTag("Corazon");
+        for(int i = 0; i<cora.Length; i++){
+            hearts.Add(cora[i]);
+        }
     }
 
     private void Update()
     {
+
         if (view.IsMine){
             // Movimiento
             Horizontal = Input.GetAxisRaw("Horizontal");
@@ -84,18 +98,45 @@ public class MovimientoJugador : MonoBehaviour
         bullet.GetComponent<BulletScript>().SetDirection(direction);
     }
 
+    public void Muerte(){
+        this.transform.position = respawnPoint.position;
+        sprite.enabled = true;
+        Health = 5;
+        index = 1;
+        for(int i = 0; i<cora.Length;i++){
+            cora[i].SetActive(true);
+        }
+    }
+
     public void Hit()
     {
         Health -= 1;
 
-        GameObject.Destroy(hearts[hearts.Count - 1]);
-        hearts.RemoveAt(hearts.Count - 1);
+        hearts[hearts.Count - index].SetActive(false);
+        index ++;
 
         if (Health == 0)
-        {
-            Destroy(gameObject);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        {   
+            StartCoroutine(waitRespawn());
         }
     }
+
+    void OnTriggerEnter2D(Collider2D obj) {
+        if(obj.tag == "Check Point"){
+            respawnPoint = obj.transform;
+        }
+    }
+    void OnCollisionEnter2D(Collision2D col) {
+        if (col.gameObject.tag == "Muerte"){
+            StartCoroutine(waitRespawn());
+        }
+    }
+
+    IEnumerator waitRespawn(){
+        sprite.enabled = false;
+        yield return new WaitForSeconds(respawnDelay);
+        Muerte();
+    }
+
 }
 

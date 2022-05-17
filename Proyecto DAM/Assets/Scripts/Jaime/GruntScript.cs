@@ -5,6 +5,7 @@ using UnityEngine;
 public class GruntScript : MonoBehaviour
 {
     public Transform John;
+    public GameObject player;
     public GameObject EnemyBulletPrefab;
 
     private int Health = 3;
@@ -14,9 +15,11 @@ public class GruntScript : MonoBehaviour
     public int directionLooking = 1; //-1 = izquierda || 1 = derecha
 
     public int directionToTest;
-
+    
     void Update()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        John = player.transform;
         if (John == null) return;
 
         distanceToPlayer = Mathf.Abs(John.position.x - transform.position.x);
