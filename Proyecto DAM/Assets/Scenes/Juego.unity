@@ -34639,6 +34639,7 @@ GameObject:
   - component: {fileID: 1028560938}
   - component: {fileID: 1028560941}
   - component: {fileID: 1028560942}
+  - component: {fileID: 1028560943}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -34705,7 +34706,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028560937}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.23, y: -0.09, z: -10}
+  m_LocalPosition: {x: -4.298855, y: 0, z: -10}
   m_LocalScale: {x: 1.2872, y: 1.2872, z: 1.2872}
   m_Children: []
   m_Father: {fileID: 0}
@@ -34820,6 +34821,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1028560943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028560937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ed635ed99df40e0bd346289806cd97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chDistance: 0.1
+  delayX: 0.15
+  player: {fileID: 0}
 --- !u!1 &1029734711
 GameObject:
   m_ObjectHideFlags: 0
@@ -35366,8 +35382,8 @@ GameObject:
   - component: {fileID: 1114355789}
   - component: {fileID: 1114355788}
   m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
+  m_Name: cora1
+  m_TagString: Corazon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35389,7 +35405,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 40, y: -47}
-  m_SizeDelta: {x: 43.773254, y: 44.300262}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1114355788
 MonoBehaviour:
@@ -35983,8 +35999,8 @@ GameObject:
   - component: {fileID: 1189340330}
   - component: {fileID: 1189340329}
   m_Layer: 5
-  m_Name: Image (3)
-  m_TagString: Untagged
+  m_Name: cora4
+  m_TagString: Corazon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36006,7 +36022,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 205.5, y: -47.000015}
-  m_SizeDelta: {x: 43.773254, y: 44.300262}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1189340329
 MonoBehaviour:
@@ -36745,8 +36761,8 @@ GameObject:
   - component: {fileID: 1296603875}
   - component: {fileID: 1296603874}
   m_Layer: 5
-  m_Name: Image (2)
-  m_TagString: Untagged
+  m_Name: cora3
+  m_TagString: Corazon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36768,7 +36784,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 150.09999, y: -47.000015}
-  m_SizeDelta: {x: 43.773254, y: 44.300262}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1296603874
 MonoBehaviour:
@@ -36818,8 +36834,8 @@ GameObject:
   - component: {fileID: 1311317420}
   - component: {fileID: 1311317419}
   m_Layer: 5
-  m_Name: Image (4)
-  m_TagString: Untagged
+  m_Name: cora5
+  m_TagString: Corazon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36841,7 +36857,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 261.5, y: -47.000015}
-  m_SizeDelta: {x: 43.773254, y: 44.300262}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1311317419
 MonoBehaviour:
@@ -37254,8 +37270,8 @@ GameObject:
   - component: {fileID: 1358941530}
   - component: {fileID: 1358941529}
   m_Layer: 5
-  m_Name: Image (1)
-  m_TagString: Untagged
+  m_Name: cora2
+  m_TagString: Corazon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37277,7 +37293,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 94.99997, y: -47.000015}
-  m_SizeDelta: {x: 43.773254, y: 44.300262}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1358941529
 MonoBehaviour:
@@ -38905,10 +38921,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

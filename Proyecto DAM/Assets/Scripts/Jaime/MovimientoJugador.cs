@@ -26,6 +26,7 @@ public class MovimientoJugador : MonoBehaviour
     private float LastShoot;
     private int Health = 5;
     int index = 1;
+    GameObject[] cora = new GameObject [5];
 
     public List<GameObject> hearts;
 
@@ -35,6 +36,10 @@ public class MovimientoJugador : MonoBehaviour
         Animator = GetComponent<Animator>();
         view = GetComponent<PhotonView>();
         sprite = GetComponent<SpriteRenderer>();
+        cora = GameObject.FindGameObjectsWithTag("Corazon");
+        for(int i = 0; i<cora.Length; i++){
+            hearts.Add(cora[i]);
+        }
     }
 
     private void Update()
@@ -98,13 +103,16 @@ public class MovimientoJugador : MonoBehaviour
         sprite.enabled = true;
         Health = 5;
         index = 1;
+        for(int i = 0; i<cora.Length;i++){
+            cora[i].SetActive(true);
+        }
     }
 
     public void Hit()
     {
         Health -= 1;
 
-        //hearts[hearts.Count - index].SetActive(false);
+        hearts[hearts.Count - index].SetActive(false);
         index ++;
 
         if (Health == 0)
