@@ -7,10 +7,6 @@ TagManager:
   - Suelo
   - Enemy
   - Limits
-  - Check Point
-  - Game
-  - Muerte
-  - Corazon
   layers:
   - Default
   - TransparentFX
