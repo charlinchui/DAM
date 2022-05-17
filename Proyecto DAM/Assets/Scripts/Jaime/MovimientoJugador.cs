@@ -10,13 +10,19 @@ public class MovimientoJugador : MonoBehaviour
     public PhotonView view;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public GameObject checkPoint;
 =======
+=======
+>>>>>>> parent of 3b68fc4 (Revert "Merge branch 'main' of https://github.com/charlinchui/DAM")
     public Transform respawnPoint;
 
     //public Color color = new Color(255,255,255);
     public SpriteRenderer sprite;
     public int respawnDelay;
+<<<<<<< HEAD
+>>>>>>> parent of 3b68fc4 (Revert "Merge branch 'main' of https://github.com/charlinchui/DAM")
+=======
 >>>>>>> parent of 3b68fc4 (Revert "Merge branch 'main' of https://github.com/charlinchui/DAM")
 
     public float Speed;
@@ -40,13 +46,19 @@ public class MovimientoJugador : MonoBehaviour
         Animator = GetComponent<Animator>();
         view = GetComponent<PhotonView>();
 <<<<<<< HEAD
+<<<<<<< HEAD
         checkPoint = GameObject.FindGameObjectWithTag("CheckPoints");
 =======
+=======
+>>>>>>> parent of 3b68fc4 (Revert "Merge branch 'main' of https://github.com/charlinchui/DAM")
         sprite = GetComponent<SpriteRenderer>();
         cora = GameObject.FindGameObjectsWithTag("Corazon");
         for(int i = 0; i<cora.Length; i++){
             hearts.Add(cora[i]);
         }
+<<<<<<< HEAD
+>>>>>>> parent of 3b68fc4 (Revert "Merge branch 'main' of https://github.com/charlinchui/DAM")
+=======
 >>>>>>> parent of 3b68fc4 (Revert "Merge branch 'main' of https://github.com/charlinchui/DAM")
     }
 
@@ -125,10 +137,15 @@ public class MovimientoJugador : MonoBehaviour
 
         if (Health == 0)
 <<<<<<< HEAD
+<<<<<<< HEAD
         {
             //Destroy(gameObject);
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             this.transform.position = (new Vector2(checkPoint.transform.position.x, checkPoint.transform.position.y));
+=======
+        {   
+            StartCoroutine(waitRespawn());
+>>>>>>> parent of 3b68fc4 (Revert "Merge branch 'main' of https://github.com/charlinchui/DAM")
 =======
         {   
             StartCoroutine(waitRespawn());
